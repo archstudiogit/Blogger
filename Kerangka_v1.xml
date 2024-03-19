@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<HTML expr:dir='data:blog.languageDirection' lang='id'>
+&lt;head&gt;
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=5.0' name='viewport'/>
+<b:if cond='data:view.isSingleItem'>
+<title><data:blog.pageName/></title>
+<b:elseif cond='data:view.isHomepage'/>
+<title><data:blog.title/></title>
+<b:elseif cond='data:view.search.label'/>
+<title><data:blog.pageTitle/></title>
+<b:elseif cond='data:view.search.query'/>
+<title><data:view.search.resultsMessage/></title>
+<b:elseif cond='data:view.search and !data:view.search.label and !data:view.search.query'/>
+<title><data:blog.pageTitle/></title>
+<b:elseif cond='data:view.isArchive'/>
+<title><data:view.archive.rangeMessage/></title>
+<b:elseif cond='data:view.isError'/>
+<title>404 Not Found</title>
+</b:if>
+<b:if cond='data:blog.pageType in {&quot;archive&quot;} or data:blog.searchLabel or data:blog.searchQuery'>
+<meta content='noindex/nofollow' name='robots'/>
+<meta content='noindex/nofollow' name='googlebot'/>
+<b:elseif cond='data:view.isSingleItem or data:view.isHomepage'/>
+<meta content='index/follow' name='robots'/>
+<meta content='index/follow' name='googlebot'/>
+</b:if>
+<meta content='blogger' name='generator'/>
+<link href='https://www.blogger.com/openid-server.g' rel='openid.server'/>
+<link expr:href='data:blog.homepageUrl' rel='openid.delegate'/>
+<link expr:href='data:blog.url.canonical' rel='canonical'/>
+<link expr:href='data:blog.homepageUrl + &quot;feeds/posts/default&quot;' expr:title='data:blog.title + &quot; - Atom&quot;' rel='alternate' type='application/atom+xml'/>
+<link expr:href='data:blog.homepageUrl + &quot;feeds/posts/default?alt=rss&quot;' expr:title='data:blog.title + &quot; - RSS&quot;' rel='alternate' type='application/rss+xml'/>
+<link expr:href='&quot;https://www.blogger.com/feeds/&quot; + data:blog.blogId + &quot;/posts/default&quot;' expr:title='data:blog.title + &quot; - Atom&quot;' rel='alternate' type='application/atom+xml'/>
+<b:if cond='data:view.isMultipleItems'>
+<meta expr:content='data:blog.metaDescription' name='description'/>
+<b:elseif cond='data:view.isSingleItem'/>
+<b:if cond='data:blog.metaDescription'>
+<meta expr:content='data:blog.metaDescription' name='description'/>
+<b:else/>
+<meta expr:content='data:blog.title' name='description'/>
+</b:if>
+</b:if>
+<meta content='#000000' name='msapplication-navbutton-color'/>
+<meta content='#000000' name='apple-mobile-web-app-status-bar-style'/>
+<meta content='#000000' name='theme-color'/> 
+<b:if cond='data:view.isMultipleItems'>
+<meta content='YOUR KEYWORD 1 HERE, YOUR KEYWORD 2 HERE, YOUR KEYWORD 3 HERE, YOUR KEYWORD 4 HERE' name='keywords'/>
+<b:elseif cond='data:view.isSingleItem'/>
+<meta expr:content='data:blog.pageName' name='keywords'/>
+</b:if>
+<b:if cond='data:view.isPost'>
+<b:if cond='data:blog.postImageThumbnailUrl'>
+<link expr:href='data:blog.postImageThumbnailUrl' rel='image_src'/>
+</b:if></b:if>
+<link expr:href='data:blog.url' hreflang='x-default' rel='alternate'/>
+<link href='/favicon.ico' rel='icon' type='image/x-icon'/>
+<meta content='XXXXX' name='google-site-verification'/>
+<meta content='XXXXX' name='alexaVerifyID'/>
+<meta content='XXXXX' name='p:domain_verify'/>
+<meta content='XXXXX' name='yandex-verification'/>
+<meta content='XXXXX' name='msvalidate.01'/>
+<!-- Open Graph -->
+<b:if cond='data:view.isHomepage'> 
+<b:if cond='data:view.isSingleItem'>
+<b:if cond='data:blog.url'>
+<meta expr:content='data:blog.url' property='og:url'/>
+</b:if>
+<meta expr:content='data:blog.title' property='og:site_name'/>
+</b:if></b:if>
+<b:if cond='data:view.isPost'>
+<meta expr:content='data:blog.pageName' property='og:title'/>
+<meta content='article' property='og:type'/>
+<b:else/>
+<meta expr:content='data:blog.title' property='og:title'/>
+<meta content='website' property='og:type'/>
+</b:if>
+<meta expr:content='data:blog.canonicalUrl' property='og:url'/>
+<b:if cond='data:blog.postImageUrl'>
+<meta expr:content='data:blog.postImageUrl' property='og:image'/>
+<b:else/>
+<b:if cond='data:blog.postImageThumbnailUrl'>
+<meta expr:content='data:blog.postThumbnailUrl' property='og:image'/>
+<b:else/>
+<meta content='YOUR_IMAGE_URL_HERE' property='og:image'/>
+</b:if></b:if>
+<b:if cond='data:view.isMultipleItems'>
+<meta expr:content='data:blog.metaDescription' property='og:description'/>
+<b:elseif cond='data:view.isSingleItem'/>
+<b:if cond='data:blog.metaDescription'>
+<meta expr:content='data:blog.metaDescription' property='og:description'/>
+<b:else/>
+<meta expr:content='data:blog.title' property='og:description'/>
+</b:if>
+</b:if>
+<meta expr:content='data:blog.title' property='og:site_name'/>
+<b:if cond='data:view.isSingleItem'>
+<meta content='https://www.facebook.com/XXXXX' property='article:author'/>
+<meta content='https://www.facebook.com/XXXXX' property='article:publisher'/>
+</b:if>
+<meta content='XXXXX' property='fb:app_id'/>
+<meta content='XXXXX' property='fb:admins'/>
+<meta content='XXXXX' property='fb:profile_id'/>
+<meta content='XXXXX' property='fb:pages'/>
+<meta content='id' name='geo.country'/>
+<meta content='id_ID' property='og:locale'/>
+<meta content='en_US' property='og:locale:alternate'/>
+<meta content='Indonesia' name='geo.placename'/>
+<meta content='general' name='rating'/>
+<b:if cond='data:blog.pageType == &quot;item&quot;'>
+<meta expr:content='data:blog.pageName' property='og:image:alt'/>
+<b:else/>
+<meta expr:content='data:blog.title' property='og:image:alt'/>
+</b:if>
+<meta expr:content='data:blog.title' name='twitter:site'/>
+<meta content='summary_large_image' name='twitter:card'/>
+<meta content='@YOUR_TWITTER_USERNAME_HERE' name='twitter:creator'/>
+<!-- Schema WebSite -->
+<script type='application/ld+json'>{ &quot;@context&quot;: &quot;https://schema.org&quot;, &quot;@type&quot;: &quot;WebSite&quot;, &quot;@id&quot;: &quot;#website&quot;, &quot;url&quot;: &quot;<data:blog.homepageUrl/>&quot;, &quot;potentialAction&quot;: { &quot;@type&quot;: &quot;SearchAction&quot;, &quot;target&quot;: &quot;<data:blog.homepageUrl/>search?q={search_term}&quot;, &quot;query-input&quot;: &quot;required name=search_term&quot; } }</script>
+<link href='//adservice.google.ca' rel='dns-prefetch'/>
+<link href='//googleads.g.doubleclick.net' rel='dns-prefetch'/>
+<link href='//adservice.google.com' rel='dns-prefetch'/>
+<link href='//www.googletagservices.com' rel='dns-prefetch'/>
+<link href='//pagead2.googlesyndication.com' rel='dns-prefetch'/>
+<link href='//maxcdn.bootstrapcdn.com' rel='dns-prefetch'/>
+<link href='//resources.blogblog.com' rel='dns-prefetch'/>
+<link href='//fonts.googleapis.com' rel='dns-prefetch'/>
+<link href='//disqus.com' rel='dns-prefetch'/>
+<link href='//github.com' rel='dns-prefetch'/>
+<link href='//cdn.rawgit.com' rel='dns-prefetch'/>
+<link href='//1.bp.blogspot.com' rel='dns-prefetch'/>
+<link href='//2.bp.blogspot.com' rel='dns-prefetch'/>
+<link href='//3.bp.blogspot.com' rel='dns-prefetch'/>
+<link href='//4.bp.blogspot.com' rel='dns-prefetch'/>
+<link href='//www.blogger.com' rel='dns-prefetch'/>
+<link href='//www.facebook.com' rel='dns-prefetch'/>
+<link href='//plus.google.com' rel='dns-prefetch'/>
+<link href='//twitter.com' rel='dns-prefetch'/>
+<link href='//www.youtube.com' rel='dns-prefetch'/>
+<link href='//feedburner.google.com' rel='dns-prefetch'/>
+<link href='//feeds.feedburner.com' rel='dns-prefetch'/>
+<link href='//platform.twitter.com' rel='dns-prefetch'/>
+<link href='//apis.google.com' rel='dns-prefetch'/>
+<link href='//connect.facebook.net' rel='dns-prefetch'/>
+<link href='//www.google-analytics.com' rel='dns-prefetch'/>
+<link href='//www.gstatic.com' rel='dns-prefetch'/>
+<link href='//static.xx.fbcdn.net' rel='dns-prefetch'/>
+<link href='//tpc.googlesyndication.com' rel='dns-prefetch'/>
+<link href='//syndication.twitter.com' rel='dns-prefetch'/>
+<link href='//fonts.gstatic.com' rel='dns-prefetch'/>
+<link href='https://3p.ampproject.net' rel='dns-prefetch'/>
+<link href='https://lh3.googleusercontent.com' rel='dns-prefetch'/>
+<link href='https://tpc.googlesyndication.com' rel='dns-prefetch'/>
+<link href='https://i.ytimg.com' rel='dns-prefetch'/>
+<link href='https://i3.ytimg.com' rel='dns-prefetch'/>
+<link href='https://img.youtube.com' rel='dns-prefetch'/>
+<link href='https://www.googletagmanager.com' rel='dns-prefetch'/>
+<link href='https://adservice.google.co.id/' rel='dns-prefetch'/>
+<link href='//cdnjs.cloudflare.com/' rel='dns-prefetch'/>
+<link href='//resources.blogblog.com/' rel='dns-prefetch'/>
+<!--END OG CODE-->   
+<b:skin><![CDATA[
+/*Blogger Template Style
+Name    : OREO
+Version : 1.4
+Powered by: Blogger
+----------------------------------------------- */
+body#layout #page_content:before{content:'Kerangka Blogger V1';position:absolute;right:10px;top:10px;padding:10px}
+body#layout #footer-wrapper li,body#layout .mini-list li {list-style: none;}
+body#layout #widget-social,body#layout #footer-wrapper{display:none;}
+body#layout .section h4 {margin:10px 0!important}
+body#layout .content-wrapper{padding:0;margin:0 auto}
+body#layout #main-wrapper{width:70%;float:left;margin:0;padding:0}
+body#layout #sidebar-wrapper{width:30%;float:right;margin:0}
+body#layout #sidebar-wrapper .sidebar{overflow:hidden}
+]]></b:skin>
+<style>
+/*<![CDATA[*/
+
+/*]]>*/
+</style>
+<b:if cond='data:view.isMultipleItems'>
+<style>
+
+</style>
+</b:if>
+<b:if cond='data:view.isPost'>
+<style>
+
+</style>
+</b:if>
+<b:if cond='data:view.isPage'>
+<style>
+
+</style>
+</b:if>
+<b:if cond='data:blog.searchQuery'>
+<style>
+
+</style>
+</b:if>
+<b:if cond='data:view.isError'>
+<style>
+
+</style>
+</b:if>
+<style>
+/*<![CDATA[*/
+
+/*]]>*/
+</style>
+<include expiration='7d' path='*.css'/>
+<include expiration='7d' path='*.js'/>
+<include expiration='3d' path='*.gif'/>
+<include expiration='3d' path='*.jpeg'/>
+<include expiration='3d' path='*.jpg'/>
+<include expiration='3d' path='*.png'/>
+<meta content='sat, 02 jun 2020 00:00:00 GMT' http-equiv='expires'/>
+&lt;/head&gt;&lt;!--<head/>--&gt;
+&lt;body&gt;
+
+<b:section id='+Widget'/>
+&lt;/body&gt;&lt;!--<body/>--&gt;
+</HTML>
